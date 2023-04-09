@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Polar OH1 Demo</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <style>
+    body {
+      text-align: center;
+      background-color: black;
+      color: white;
+      padding: 15%;
+    }
+
+    ion-card {
+    --background: black;
+    }
+
+    ion-card-title {
+      --color: #52ffe4;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Current Heart Rate</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p id="heartRateDisplay">not connected</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Heart Rate Range</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-range id="heartRateSlider" aria-label="Dual Knobs Range" min="40" max="190" dual-knobs="true" pin="true"></ion-range>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Volume</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-range aria-label="Volume" value="80" id="volumeSlider"></ion-range>
+    </ion-card-content>
+  </ion-card>
+
+      <ion-button size="large" id="connectButton">Connect to OH1</ion-button>
+  <script src="script.js"></script>
+</body>
+
+</html>
