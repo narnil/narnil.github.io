@@ -41,10 +41,10 @@ function handleData(event) {
 function checkHeartRate() {
   if (heartRate < range.value.lower) {
     alertLow.play();
-    console.log(`Heart rate is below minimum (${range.value.lower})`);
+    //console.log(`Heart rate is below minimum (${range.value.lower})`);
   } else if (heartRate > range.value.upper) {
     alertHigh.play();
-    console.log(`Heart rate is above maximum (${range.value.upper})`);
+    //console.log(`Heart rate is above maximum (${range.value.upper})`);
   }
 }
 
@@ -64,18 +64,12 @@ volumeSlider.addEventListener('ionChange', function() {
   alertHigh.volume = volume/100;
 });
 
-let heartRate = 80;
+let heartRate = 120;
 const alertLow = new Audio('assets/low.mp3');
 const alertHigh = new Audio('assets/high.mp3');
 
-const rangeDisplay = document.querySelector("#rangeDisplay");
 const range = document.querySelector("#heartRateSlider");
 range.value = {
-  lower: 60,
-  upper: 140,
+  lower: 110,
+  upper: 144,
 };
-rangeDisplay.textContent = `Min rate: ${range.value.lower} / Max rate: ${range.value.upper}`;
-
-range.addEventListener('ionChange', function() {
-  rangeDisplay.textContent = `Min rate: ${range.value.lower} / Max rate: ${range.value.upper}`;
-});

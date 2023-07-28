@@ -13,40 +13,39 @@
       padding: 15%;
     }
 
+    #heartRateDisplay {
+      font-size: 180px;
+    }
+
     ion-card {
       --background: black;
+      padding: 30px 13px 0px 13px;
     }
 
     ion-card-title {
       --color: #52ffe4;
     }
+
+    ion-range::part(pin) {
+      transform: scale(2);
+      top: -50px;
+    }
   </style>
 </head>
 
 <body>
+  <div>
+    <p id="heartRateDisplay">144</p>
+  </div>
+
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Current Heart Rate</ion-card-title>
-    </ion-card-header>
     <ion-card-content>
-      <p id="heartRateDisplay">not connected</p>
+      <ion-range id="heartRateSlider" aria-label="Dual Knobs Range" min="80" max="200" dual-knobs="true"
+        pin="true"></ion-range>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Heart Rate Range</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p id="rangeDisplay"></p>
-      <ion-range id="heartRateSlider" aria-label="Dual Knobs Range" min="40" max="190" dual-knobs="true" pin="true"></ion-range>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Volume</ion-card-title>
-    </ion-card-header>
     <ion-card-content>
       <ion-range aria-label="Volume" value="80" id="volumeSlider"></ion-range>
     </ion-card-content>
